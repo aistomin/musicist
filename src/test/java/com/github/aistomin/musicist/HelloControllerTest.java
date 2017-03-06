@@ -6,16 +6,16 @@ import org.junit.Test;
 /**
  * Created by aistomin on 06/03/2017.
  *
- * Test for {@link Dummy}
+ * Test for {@link HelloController}
  */
-public class DummyTest {
+public class HelloControllerTest {
 
     /**
      * Just a dummy test.
      * @throws Exception If something goes wrong.
      */
     @Test
-    public void testDummy() throws Exception {
-        Assert.assertNotNull(new Dummy());
+    public void tesNothing() throws Exception {
+        Assert.assertNotNull(new HelloController());
     }
 }
