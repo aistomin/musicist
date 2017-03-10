@@ -1,2 +1,2 @@
 # musicist
-The testing software for learning musical notes
+The testing software for learning musical notes.
