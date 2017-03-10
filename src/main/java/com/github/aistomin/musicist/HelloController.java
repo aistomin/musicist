@@ -15,12 +15,22 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public final class HelloController {
 
+    /**
+     * Print welcome message on the "Hello World" page.
+     * @param model The model.
+     * @return The welcome message.
+     */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String printWelcome(final ModelMap model) {
-        model.addAttribute("message", "Spring 3 MVC Hello World");
+        model.addAttribute("message", "MusicIST");
         return "hello";
     }
 
+    /**
+     * Renders the "Hello World" page.
+     * @param name The name of the user.
+     * @return The model and the view.
+     */
     @RequestMapping(value = "/hello/{name:.+}", method = RequestMethod.GET)
     public ModelAndView hello(@PathVariable("name") final String name) {
         final ModelAndView model = new ModelAndView();
