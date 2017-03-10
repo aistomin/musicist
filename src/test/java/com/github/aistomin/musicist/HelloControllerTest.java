@@ -8,7 +8,7 @@ import org.junit.Test;
  *
  * Test for {@link HelloController}
  */
-public class HelloControllerTest {
+public final class HelloControllerTest {
 
     /**
      * Just a dummy test.
