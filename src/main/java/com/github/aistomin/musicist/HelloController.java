@@ -23,7 +23,17 @@ public final class HelloController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String printWelcome(final ModelMap model) {
         model.addAttribute("message", "MusicIST");
-        return "hello";
+        return "index";
+    }
+
+    /**
+     * Log In.
+     * @param model The model.
+     * @return The welcome message.
+     */
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(final ModelMap model) {
+        return "index";
     }
 
     /**
@@ -34,7 +44,7 @@ public final class HelloController {
     @RequestMapping(value = "/hello/{name:.+}", method = RequestMethod.GET)
     public ModelAndView hello(@PathVariable("name") final String name) {
         final ModelAndView model = new ModelAndView();
-        model.setViewName("hello");
+        model.setViewName("index");
         model.addObject("msg", name);
         return model;
     }

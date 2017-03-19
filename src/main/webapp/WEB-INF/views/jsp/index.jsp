@@ -1,20 +1,29 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>MusicIST Project</title>
-
-    <spring:url value="/resources/core/css/hello.css" var="coreCss" />
-    <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss" />
-    <link href="${bootstrapCss}" rel="stylesheet" />
-    <link href="${coreCss}" rel="stylesheet" />
+    <spring:url value="/resources/core/css/musicist.css" var="coreCss"/>
+    <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss"/>
+    <link href="${bootstrapCss}" rel="stylesheet"/>
+    <link href="${coreCss}" rel="stylesheet"/>
 </head>
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">MusicIST Project</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <a class="navbar-brand" href="#">MusicIST Project</a>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="login">Log In</a></li>
+            </ul>
         </div>
     </div>
 </nav>
@@ -70,8 +79,8 @@
     </footer>
 </div>
 
-<spring:url value="/resources/core/js/hello.js" var="coreJs" />
-<spring:url value="/resources/core/js/bootstrap.min.js" var="bootstrapJs" />
+<spring:url value="/resources/core/js/musicist.js" var="coreJs"/>
+<spring:url value="/resources/core/js/bootstrap.min.js" var="bootstrapJs"/>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${coreJs}"></script>
