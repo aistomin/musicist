@@ -4,14 +4,19 @@
 
             <div class="modal-header">
                 <div class="row">
-                    <div class="col-xs-9"><h3 class="modal-title one-line" id="myModalLabel">Hello Title!</h3></div>
-                    <div class="col-xs-3"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+                    <div class="col-xs-9"><h3 class="modal-title one-line" id="myModalLabel">Choose the Login
+                        Method:</h3></div>
+                    <div class="col-xs-3">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
                 </div>
             </div><!-- /.modal-header -->
-
             <div class="modal-body">
-                Hello!
+                <a href="#"><img src="${pageContext.request.contextPath}/resources/core/img/social/facebook.png"></a>
+                <a href="#"><img src="${pageContext.request.contextPath}/resources/core/img/social/google.png"></a>
             </div><!-- /.modal-body -->
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+</div>
+<!-- /.modal -->

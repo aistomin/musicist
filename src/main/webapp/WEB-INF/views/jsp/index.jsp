@@ -77,6 +77,7 @@
     <hr>
     <footer>
         <p>&copy; Andrej Istomin 2017</p>
+        Illustration credit: <a rel="nofollow" href="https://www.vecteezy.com">vecteezy.com</a>
     </footer>
 </div>
 
