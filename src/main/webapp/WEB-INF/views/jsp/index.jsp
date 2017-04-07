@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>MusicIST Project</title>
+    <title><spring:message code="project.title"/></title>
     <spring:url value="/resources/core/css/musicist.css" var="coreCss"/>
     <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss"/>
     <link href="${bootstrapCss}" rel="stylesheet"/>
@@ -20,10 +20,11 @@
                 <span class="icon-bar"></span>
             </button>
         </div>
-        <a class="navbar-brand" href="#">MusicIST Project</a>
+        <a class="navbar-brand" href="${pageContext.request.contextPath}/"><spring:message code="project.title"/></a>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" data-toggle="modal" data-target="#login_dialog">Log In</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#login_dialog">
+                    <spring:message code="menu.login"/></a></li>
             </ul>
         </div>
     </div>
@@ -77,7 +78,7 @@
     <hr>
     <footer>
         <p>&copy; Andrej Istomin 2017</p>
-        Illustration credit: <a rel="nofollow" href="https://www.vecteezy.com">vecteezy.com</a>
+        <spring:message code="credit.vecteezy"/><a rel="nofollow" href="https://www.vecteezy.com">vecteezy.com</a>
     </footer>
 </div>
 

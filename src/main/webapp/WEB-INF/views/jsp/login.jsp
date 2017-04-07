@@ -4,8 +4,7 @@
 
             <div class="modal-header">
                 <div class="row">
-                    <div class="col-xs-9"><h3 class="modal-title one-line" id="myModalLabel">Choose the Login
-                        Method:</h3></div>
+                    <div class="col-xs-9"><h3 class="modal-title one-line" id="myModalLabel"><spring:message code="login.title"/></h3></div>
                     <div class="col-xs-3">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
