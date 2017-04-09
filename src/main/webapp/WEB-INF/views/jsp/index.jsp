@@ -23,6 +23,20 @@
         <a class="navbar-brand" href="${pageContext.request.contextPath}/"><spring:message code="project.title"/></a>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown pay-language-selector">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img src="/resources/core/img/flags/${pageContext.response.locale}.png"/>
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="?locale=de" data-toggle="language" data-target="#de">
+                            <img src="${pageContext.request.contextPath}/resources/core/img/flags/de.png"/>
+                        </a></li>
+                        <li><a href="?locale=en" data-toggle="language" data-target="#en">
+                            <img src="${pageContext.request.contextPath}/resources/core/img/flags/en.png"/>
+                        </a></li>
+                    </ul>
+                </li>
+
                 <li><a href="#" data-toggle="modal" data-target="#login_dialog">
                     <spring:message code="menu.login"/></a></li>
             </ul>
