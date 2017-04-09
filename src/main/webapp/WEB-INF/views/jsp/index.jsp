@@ -34,6 +34,9 @@
                         <li><a href="?locale=en" data-toggle="language" data-target="#en">
                             <img src="${pageContext.request.contextPath}/resources/core/img/flags/en.png"/>
                         </a></li>
+                        <li><a href="?locale=ru" data-toggle="language" data-target="#en">
+                            <img src="${pageContext.request.contextPath}/resources/core/img/flags/ru.png"/>
+                        </a></li>
                     </ul>
                 </li>
 
