@@ -94,10 +94,7 @@
 
     <hr>
     <footer>
-        <p>&copy; Andrej Istomin 2017</p>
-        <spring:message code="credit.vecteezy"/>
-        <a rel="nofollow" href="https://www.vecteezy.com">vecteezy.com</a>,
-        <a rel="nofollow" href="https://dribbble.com/msenyil">Muharrem Şenyıl</a>
+        <p>&copy; 2017 Andrej Istomin. <spring:message code="credit.vecteezy"/> <a rel="nofollow" href="https://www.vecteezy.com">vecteezy.com</a>, <a rel="nofollow" href="https://dribbble.com/msenyil">Muharrem Şenyıl</a></p>
     </footer>
 </div>
 
