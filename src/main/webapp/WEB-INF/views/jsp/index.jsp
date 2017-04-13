@@ -25,17 +25,17 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown pay-language-selector">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <img src="/resources/core/img/flags/${pageContext.response.locale}.png"/>
+                        <img class="lang-flag" src="/resources/core/img/flags/${pageContext.response.locale}.png"/>
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="?locale=de" data-toggle="language" data-target="#de">
-                            <img src="${pageContext.request.contextPath}/resources/core/img/flags/de.png"/>
+                            <img class="lang-flag" src="${pageContext.request.contextPath}/resources/core/img/flags/de.png"/>
                         </a></li>
                         <li><a href="?locale=en" data-toggle="language" data-target="#en">
-                            <img src="${pageContext.request.contextPath}/resources/core/img/flags/en.png"/>
+                            <img class="lang-flag" src="${pageContext.request.contextPath}/resources/core/img/flags/en.png"/>
                         </a></li>
                         <li><a href="?locale=ru" data-toggle="language" data-target="#en">
-                            <img src="${pageContext.request.contextPath}/resources/core/img/flags/ru.png"/>
+                            <img class="lang-flag" src="${pageContext.request.contextPath}/resources/core/img/flags/ru.png"/>
                         </a></li>
                     </ul>
                 </li>
