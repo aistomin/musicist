@@ -20,13 +20,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public final class FbController {
 
     /**
+     * All the paths realted to this controller will start with this prefix.
+     */
+    private static final String PREFIX = "/facebook";
+
+    /**
      * Log In.
      *
      * @param request  HTTP request.
      * @param response HTTP response.
      * @throws IOException If problem occurs.
      */
-    @RequestMapping(value = "/facebook/login", method = RequestMethod.GET)
+    @RequestMapping(value = PREFIX + "/login", method = RequestMethod.GET)
     public void login(
         final HttpServletRequest request, final HttpServletResponse response
     ) throws IOException {
@@ -35,7 +40,7 @@ public final class FbController {
         final StringBuffer callbackURL = request.getRequestURL();
         callbackURL.replace(
             callbackURL.lastIndexOf("/"), callbackURL.length(), ""
-        ).append("/facebook/callback");
+        ).append("/callback");
         response.sendRedirect(
             facebook.getOAuthAuthorizationURL(callbackURL.toString())
         );
@@ -49,7 +54,7 @@ public final class FbController {
      * @throws IOException      If problem occurs.
      * @throws ServletException If problem occurs.
      */
-    @RequestMapping(value = "/facebook/callback", method = RequestMethod.GET)
+    @RequestMapping(value = PREFIX + "/callback", method = RequestMethod.GET)
     public void callback(
         final HttpServletRequest request, final HttpServletResponse response
     ) throws IOException, ServletException {
