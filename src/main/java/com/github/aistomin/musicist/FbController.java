@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by aistomin on 15/04/2017.
  * <p>
  * Controller which is responsible for interaction with Facebook.
+ * Initially the code was stolen from
+ * https://github.com/roundrop/facebook4j-oauth-example
  */
 @Controller
 public final class FbController {
@@ -47,6 +49,36 @@ public final class FbController {
     }
 
     /**
+     * Log Out.
+     *
+     * @param request  HTTP request.
+     * @param response HTTP response.
+     * @throws IOException      If problem occurs.
+     * @throws ServletException If problem occurs.
+     */
+    @RequestMapping(value = PREFIX + "/logout", method = RequestMethod.GET)
+    public void logout(
+        final HttpServletRequest request, final HttpServletResponse response
+    ) throws IOException, ServletException {
+        final Facebook facebook = (Facebook) request.getSession()
+            .getAttribute("facebook");
+        final String accessToken;
+        try {
+            accessToken = facebook.getOAuthAccessToken().getToken();
+            facebook.deleteAllPermissions();
+        } catch (final Exception e) {
+            throw new ServletException(e);
+        }
+        request.getSession().invalidate();
+        final StringBuffer next = request.getRequestURL();
+        next.replace(next.lastIndexOf("/") + 1, next.length(), "");
+        response.sendRedirect(
+            "http://www.facebook.com/logout.php?next=" + next.toString()
+                + "&access_token=" + accessToken
+        );
+    }
+
+    /**
      * Facebook callback processor.
      *
      * @param request  HTTP request.
@@ -63,7 +95,7 @@ public final class FbController {
         final String oauthCode = request.getParameter("code");
         try {
             facebook.getOAuthAccessToken(oauthCode);
-        } catch (FacebookException e) {
+        } catch (final FacebookException e) {
             throw new ServletException(e);
         }
         response.sendRedirect(request.getContextPath() + "/");
