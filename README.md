@@ -10,4 +10,4 @@ The testing software for learning musical notes.
 ## How to Run?
 1. Clone the repo
 2. Build the project: execute ```mvn clean install package``` in the project's root.
-2. Run it: execute ```mvn jetty:run``` in the projects root.
+2. Run it: execute ```mvn jetty:run``` in the project's root.
