@@ -13,7 +13,7 @@
             </div><!-- /.modal-header -->
             <div class="modal-body">
                 <a href="${pageContext.request.contextPath}/facebook/login"><img src="${pageContext.request.contextPath}/resources/core/img/social/facebook.png"></a>
-                <%--<a href="#"><img src="${pageContext.request.contextPath}/resources/core/img/social/google.png"></a>--%>
+                <a href="#"><img src="${pageContext.request.contextPath}/resources/core/img/social/google.png"></a>
                 <%--<a href="#"><img src="${pageContext.request.contextPath}/resources/core/img/social/twitter.png"></a>--%>
                 <%--<a href="#"><img src="${pageContext.request.contextPath}/resources/core/img/social/github.png"></a>--%>
                 <%--<a href="#"><img src="${pageContext.request.contextPath}/resources/core/img/social/linkedin.png"></a>--%>
