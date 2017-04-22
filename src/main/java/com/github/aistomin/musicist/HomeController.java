@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * Created by aistomin on 06/03/2017.
  * <p>
- * Demo Spring MVC controller.
+ * Home controller which processes the home page.
  */
 @Controller
-public final class HelloController {
+public final class HomeController {
 
     /**
      * Print welcome message on the "Hello World" page.
