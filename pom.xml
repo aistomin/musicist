@@ -11,6 +11,7 @@
     <properties>
         <jdk.version>1.8</jdk.version>
         <spring.version>4.3.7.RELEASE</spring.version>
+        <google.version>1.22.0</google.version>
         <jstl.version>1.2</jstl.version>
     </properties>
 
@@ -35,6 +36,16 @@
             <groupId>org.facebook4j</groupId>
             <artifactId>facebook4j-core</artifactId>
             <version>2.4.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.oauth-client</groupId>
+            <artifactId>google-oauth-client</artifactId>
+            <version>${google.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.http-client</groupId>
+            <artifactId>google-http-client</artifactId>
+            <version>${google.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
