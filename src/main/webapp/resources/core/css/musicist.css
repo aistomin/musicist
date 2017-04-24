@@ -5,7 +5,7 @@
 .nav > li.right-menu-selector .dropdown-menu {
     min-width: 70px;
     margin-right: 15px;
-    background-color: #222
+    background-color: #222;
 }
 
 .nav > li.right-menu-selector .dropdown-menu a:hover {
@@ -14,6 +14,7 @@
 
 .nav > li.right-menu-selector .dropdown-menu a {
     line-height: 2;
+    color: white;
 }
 
 img.right-menu-icon {
