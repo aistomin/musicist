@@ -26,7 +26,7 @@
         <a class="navbar-brand" href="${pageContext.request.contextPath}/"><spring:message code="project.title"/></a>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown pay-language-selector">
+                <li class="dropdown language-selector">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">
                         <img class="lang-flag" src="/resources/core/img/flags/${pageContext.response.locale}.png"/>

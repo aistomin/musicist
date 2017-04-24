@@ -1,18 +1,18 @@
-.nav > li.dropdown.pay-language-selector > a > img {
+.nav > li.dropdown.language-selector > a > img {
     max-width: 24px;
 }
 
-.nav > li.pay-language-selector .dropdown-menu {
+.nav > li.language-selector .dropdown-menu {
     min-width: 70px;
     margin-right: 15px;
     background-color: #222
 }
 
-.nav > li.pay-language-selector .dropdown-menu a:hover {
+.nav > li.language-selector .dropdown-menu a:hover {
     background-color: #000
 }
 
-.nav > li.pay-language-selector .dropdown-menu a {
+.nav > li.language-selector .dropdown-menu a {
     line-height: 2;
 }
 
