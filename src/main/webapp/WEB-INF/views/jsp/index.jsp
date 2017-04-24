@@ -26,22 +26,22 @@
         <a class="navbar-brand" href="${pageContext.request.contextPath}/"><spring:message code="project.title"/></a>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown language-selector">
+                <li class="dropdown right-menu-selector">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                        aria-expanded="false">
-                        <img class="lang-flag" src="/resources/core/img/flags/${pageContext.response.locale}.png"/>
+                        <img class="right-menu-icon" src="/resources/core/img/flags/${pageContext.response.locale}.png"/>
                         <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="?locale=de" data-toggle="language" data-target="#de">
-                            <img class="lang-flag"
+                            <img class="right-menu-icon"
                                  src="${pageContext.request.contextPath}/resources/core/img/flags/de.png"/>
                         </a></li>
                         <li><a href="?locale=en" data-toggle="language" data-target="#en">
-                            <img class="lang-flag"
+                            <img class="right-menu-icon"
                                  src="${pageContext.request.contextPath}/resources/core/img/flags/en.png"/>
                         </a></li>
                         <li><a href="?locale=ru" data-toggle="language" data-target="#en">
-                            <img class="lang-flag"
+                            <img class="right-menu-icon"
                                  src="${pageContext.request.contextPath}/resources/core/img/flags/ru.png"/>
                         </a></li>
                     </ul>
@@ -52,10 +52,10 @@
                         <spring:message code="menu.login"/></a></li>
                 </tag:notloggedin>
                 <tag:loggedin>
-                    <li class="dropdown language-selector">
+                    <li class="dropdown right-menu-selector">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">
-                            <img class="lang-flag" src="${facebook.getPictureURL()}"/>
+                            <img class="right-menu-icon" src="${facebook.getPictureURL(24, 24)}"/>
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">My Account</a></li>
