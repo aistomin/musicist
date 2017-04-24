@@ -52,8 +52,17 @@
                         <spring:message code="menu.login"/></a></li>
                 </tag:notloggedin>
                 <tag:loggedin>
-                    <li><a href="${pageContext.request.contextPath}/facebook/logout"><spring:message
-                            code="menu.logout"/></a></li>
+                    <li class="dropdown language-selector">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            <img class="lang-flag" src="${facebook.getPictureURL()}"/>
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="${pageContext.request.contextPath}/facebook/logout"><spring:message
+                                    code="menu.logout"/></a></li>
+                        </ul>
+                    </li>
                 </tag:loggedin>
             </ul>
         </div>
@@ -67,7 +76,6 @@
             <tag:loggedin>
                 <spring:message code="text.hello"/> ${facebook.name}!
             </tag:loggedin>
-
             <tag:notloggedin>
                 <spring:message code="text.welcome"/> <spring:message code="project.title"/>!
             </tag:notloggedin>
