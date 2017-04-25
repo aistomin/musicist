@@ -58,7 +58,7 @@
                             <img class="right-menu-icon" src="${facebook.getPictureURL(24, 24)}"/>
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">My Account</a></li>
+                            <li><a href="#"><spring:message code="menu.my.profile"/></a></li>
                             <li><a href="${pageContext.request.contextPath}/facebook/logout"><spring:message
                                     code="menu.logout"/></a></li>
                         </ul>
