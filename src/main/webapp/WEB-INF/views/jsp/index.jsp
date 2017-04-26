@@ -11,6 +11,7 @@
     <spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss"/>
     <link href="${bootstrapCss}" rel="stylesheet"/>
     <link href="${coreCss}" rel="stylesheet"/>
+    <link href="${pageContext.request.contextPath}/resources/core/img/favicon.ico" rel="icon" type="image/x-icon" />
     <%@include file="login.jsp" %>
 </head>
 <body>
