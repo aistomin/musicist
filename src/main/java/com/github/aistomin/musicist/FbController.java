@@ -7,6 +7,8 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +29,11 @@ public final class FbController {
     private static final String PREFIX = "/facebook";
 
     /**
+     * SLF4J Logger.
+     */
+    private final Logger log = LoggerFactory.getLogger(getClass());
+
+    /**
      * Log In.
      *
      * @param request  HTTP request.
@@ -37,6 +44,7 @@ public final class FbController {
     public void login(
         final HttpServletRequest request, final HttpServletResponse response
     ) throws IOException {
+        log.debug("FbController.login() was called.");
         final Facebook facebook = new FacebookFactory().getInstance();
         request.getSession().setAttribute("facebook", facebook);
         final StringBuffer callbackURL = request.getRequestURL();
@@ -60,6 +68,7 @@ public final class FbController {
     public void logout(
         final HttpServletRequest request, final HttpServletResponse response
     ) throws IOException, ServletException {
+        log.debug("FbController.logout() was called.");
         final Facebook facebook = (Facebook) request.getSession()
             .getAttribute("facebook");
         final String accessToken;
@@ -72,10 +81,12 @@ public final class FbController {
         request.getSession().invalidate();
         final StringBuffer next = request.getRequestURL();
         next.replace(next.lastIndexOf("/") + 1, next.length(), "");
-        response.sendRedirect(
-            "http://www.facebook.com/logout.php?next=" + next.toString()
-                + "&access_token=" + accessToken
+        final String redirect = "http://www.facebook.com/logout.php?next="
+            + next.toString() + "&access_token=" + accessToken;
+        log.debug(
+            "FbController.logout: User will be redirected to: " + redirect
         );
+        response.sendRedirect(redirect);
     }
 
     /**
@@ -90,6 +101,7 @@ public final class FbController {
     public void callback(
         final HttpServletRequest request, final HttpServletResponse response
     ) throws IOException, ServletException {
+        log.debug("FbController.callback() was called.");
         final Facebook facebook = (Facebook) request.getSession()
             .getAttribute("facebook");
         final String oauthCode = request.getParameter("code");
