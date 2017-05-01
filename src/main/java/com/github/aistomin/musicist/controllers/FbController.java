@@ -1,4 +1,4 @@
-package com.github.aistomin.musicist;
+package com.github.aistomin.musicist.controllers;
 
 import facebook4j.Facebook;
 import facebook4j.FacebookException;

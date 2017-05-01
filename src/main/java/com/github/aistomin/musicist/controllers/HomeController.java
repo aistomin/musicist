@@ -1,4 +1,4 @@
-package com.github.aistomin.musicist;
+package com.github.aistomin.musicist.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
