@@ -81,6 +81,9 @@
                 <spring:message code="text.welcome"/> <spring:message code="project.title"/>!
             </tag:notloggedin>
         </p>
+        <tag:loggedin>
+            <p>Your email: ${facebook.getMe().getEmail()}</p>
+        </tag:loggedin>
         <p>
             <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
         </p>
