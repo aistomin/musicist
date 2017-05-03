@@ -24,20 +24,20 @@ public final class UserTest extends MusicistSuite {
     public void testCreateUser() throws Exception {
         final Random random = getRandom();
         final FacebookUser user = new FacebookUser();
-        final Long expectedId = random.nextLong();
-        user.setId(expectedId);
-        final Set<Role> expectedRoles = new HashSet<>();
-        final Role[] roles = Role.values();
-        expectedRoles.add(roles[random.nextInt(roles.length)]);
-        user.setRoles(expectedRoles);
-        final String expectedFbId = UUID.randomUUID().toString();
-        user.setFacebookId(expectedFbId);
-        final String expectedEmail = expectedFbId + "@test.de";
-        user.setEmail(expectedEmail);
-        Assert.assertEquals(expectedId, user.getId());
+        final Long id = random.nextLong();
+        user.setId(id);
+        final Set<Role> roles = new HashSet<>();
+        final Role[] all = Role.values();
+        roles.add(all[random.nextInt(all.length)]);
+        user.setRoles(roles);
+        final String fbid = UUID.randomUUID().toString();
+        user.setFacebookId(fbid);
+        final String email = fbid + "@test.de";
+        user.setEmail(email);
+        Assert.assertEquals(id, user.getId());
         Assert.assertEquals(1, user.getRoles().size());
-        Assert.assertTrue(user.getRoles().containsAll(expectedRoles));
-        Assert.assertEquals(expectedFbId, user.getFacebookId());
-        Assert.assertEquals(expectedEmail, user.getEmail());
+        Assert.assertTrue(user.getRoles().containsAll(roles));
+        Assert.assertEquals(fbid, user.getFacebookId());
+        Assert.assertEquals(email, user.getEmail());
     }
 }
