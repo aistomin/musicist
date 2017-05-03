@@ -61,21 +61,4 @@ public final class UserTest extends MusicistSuite {
         Assert.assertEquals(gid, user.getGoogleId());
         Assert.assertEquals(email, user.getEmail());
     }
-
-    /**
-     * Get random user's role.
-     * @return Random role.
-     */
-    private Role randomRole() {
-        final Role[] all = Role.values();
-        return all[getRandom().nextInt(all.length)];
-    }
-
-    /**
-     * Generate random email.
-     * @return Random email.
-     */
-    private String randomEmail() {
-        return UUID.randomUUID().toString() + "@test.de";
-    }
 }
