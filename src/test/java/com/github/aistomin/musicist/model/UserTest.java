@@ -2,7 +2,6 @@ package com.github.aistomin.musicist.model;
 
 import com.github.aistomin.musicist.MusicistSuite;
 import java.util.HashSet;
-import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
 import org.junit.Assert;
@@ -22,13 +21,11 @@ public final class UserTest extends MusicistSuite {
      */
     @Test
     public void testCreateUser() throws Exception {
-        final Random random = getRandom();
         final FacebookUser user = new FacebookUser();
-        final Long id = random.nextLong();
+        final Long id = getRandom().nextLong();
         user.setId(id);
         final Set<Role> roles = new HashSet<>();
-        final Role[] all = Role.values();
-        roles.add(all[random.nextInt(all.length)]);
+        roles.add(randomRole());
         user.setRoles(roles);
         final String fbid = UUID.randomUUID().toString();
         user.setFacebookId(fbid);
@@ -39,5 +36,14 @@ public final class UserTest extends MusicistSuite {
         Assert.assertTrue(user.getRoles().containsAll(roles));
         Assert.assertEquals(fbid, user.getFacebookId());
         Assert.assertEquals(email, user.getEmail());
+    }
+
+    /**
+     * Get random user's role.
+     * @return Random role.
+     */
+    private Role randomRole() {
+        final Role[] all = Role.values();
+        return all[getRandom().nextInt(all.length)];
     }
 }
