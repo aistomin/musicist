@@ -7,7 +7,7 @@ import java.util.Set;
  * <p>
  * Application user.
  */
-public final class User {
+public abstract class User {
 
     /**
      * User's ID in musicist system.
@@ -20,10 +20,15 @@ public final class User {
     private Set<Role> roles;
 
     /**
+     * User's email.
+     */
+    private String email;
+
+    /**
      * Get User's ID in musicist system.
      * @return User's ID.
      */
-    public Long getId() {
+    public final Long getId() {
         return id;
     }
 
@@ -31,7 +36,7 @@ public final class User {
      * Set User's ID in musicist system.
      * @param identifier User's ID.
      */
-    public void setId(final Long identifier) {
+    public final void setId(final Long identifier) {
         this.id = identifier;
     }
 
@@ -39,7 +44,7 @@ public final class User {
      * Get user's roles in musicist system.
      * @return List of user's roles.
      */
-    public Set<Role> getRoles() {
+    public final Set<Role> getRoles() {
         return roles;
     }
 
@@ -47,7 +52,23 @@ public final class User {
      * Set user's roles in musicist system.
      * @param set List of user's roles.
      */
-    public void setRoles(final Set<Role> set) {
+    public final void setRoles(final Set<Role> set) {
         this.roles = set;
+    }
+
+    /**
+     * Get user's email.
+     * @return Email.
+     */
+    public final String getEmail() {
+        return email;
+    }
+
+    /**
+     * Set user's email.
+     * @param mail Email.
+     */
+    public final void setEmail(final String mail) {
+        this.email = mail;
     }
 }
