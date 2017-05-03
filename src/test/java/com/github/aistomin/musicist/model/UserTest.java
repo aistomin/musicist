@@ -15,12 +15,12 @@ import org.junit.Test;
 public final class UserTest extends MusicistSuite {
 
     /**
-     * Check that we properly set fields on user during creation.
+     * Check that we can create Facebook user.
      *
      * @throws Exception If something goes wrong.
      */
     @Test
-    public void testCreateUser() throws Exception {
+    public void testCreateFbUser() throws Exception {
         final FacebookUser user = new FacebookUser();
         final Long id = getRandom().nextLong();
         user.setId(id);
@@ -35,6 +35,30 @@ public final class UserTest extends MusicistSuite {
         Assert.assertEquals(1, user.getRoles().size());
         Assert.assertTrue(user.getRoles().containsAll(roles));
         Assert.assertEquals(fbid, user.getFacebookId());
+        Assert.assertEquals(email, user.getEmail());
+    }
+
+    /**
+     * Check that we can create Facebook user.
+     *
+     * @throws Exception If something goes wrong.
+     */
+    @Test
+    public void testCreateGoogleUser() throws Exception {
+        final GoogleUser user = new GoogleUser();
+        final Long id = getRandom().nextLong();
+        user.setId(id);
+        final Set<Role> roles = new HashSet<>();
+        roles.add(randomRole());
+        user.setRoles(roles);
+        final String gid = UUID.randomUUID().toString();
+        user.setGoogleId(gid);
+        final String email = gid + "@test.de";
+        user.setEmail(email);
+        Assert.assertEquals(id, user.getId());
+        Assert.assertEquals(1, user.getRoles().size());
+        Assert.assertTrue(user.getRoles().containsAll(roles));
+        Assert.assertEquals(gid, user.getGoogleId());
         Assert.assertEquals(email, user.getEmail());
     }
 
