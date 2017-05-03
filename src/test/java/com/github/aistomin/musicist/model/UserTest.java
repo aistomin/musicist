@@ -29,7 +29,7 @@ public final class UserTest extends MusicistSuite {
         user.setRoles(roles);
         final String fbid = UUID.randomUUID().toString();
         user.setFacebookId(fbid);
-        final String email = fbid + "@test.de";
+        final String email = randomEmail();
         user.setEmail(email);
         Assert.assertEquals(id, user.getId());
         Assert.assertEquals(1, user.getRoles().size());
@@ -53,7 +53,7 @@ public final class UserTest extends MusicistSuite {
         user.setRoles(roles);
         final String gid = UUID.randomUUID().toString();
         user.setGoogleId(gid);
-        final String email = gid + "@test.de";
+        final String email = randomEmail();
         user.setEmail(email);
         Assert.assertEquals(id, user.getId());
         Assert.assertEquals(1, user.getRoles().size());
@@ -69,5 +69,13 @@ public final class UserTest extends MusicistSuite {
     private Role randomRole() {
         final Role[] all = Role.values();
         return all[getRandom().nextInt(all.length)];
+    }
+
+    /**
+     * Generate random email.
+     * @return Random email.
+     */
+    private String randomEmail() {
+        return UUID.randomUUID().toString() + "@test.de";
     }
 }
