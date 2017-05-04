@@ -1,5 +1,6 @@
 package com.github.aistomin.musicist.controllers;
 
+import com.github.aistomin.musicist.model.Note;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ public final class HomeController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String printWelcome(final ModelMap model) {
         model.addAttribute("message", "MusicIST");
+        model.addAttribute("notes", Note.values());
         return "index";
     }
 }

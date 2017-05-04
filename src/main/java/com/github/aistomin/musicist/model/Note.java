@@ -84,7 +84,7 @@ public enum Note {
      * Get Internationalisation key for displaying the note.
      * @return Key.
      */
-    public String getI18nkey() {
+    public String getI18nKey() {
         return i18nkey;
     }
 }

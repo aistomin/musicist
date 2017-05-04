@@ -94,8 +94,12 @@
 
     <div class="row">
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>ABC</p>
+            <h2><spring:message code="notes"/></h2>
+            <p>
+                <c:forEach items="${notes}" var="note">
+                    <spring:message code="${note.getI18nKey()}"/><br>
+                </c:forEach>
+            </p>
             <p>
                 <a class="btn btn-default" href="#" role="button">View details</a>
             </p>
