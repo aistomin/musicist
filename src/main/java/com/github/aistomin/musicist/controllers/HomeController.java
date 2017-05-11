@@ -1,5 +1,6 @@
 package com.github.aistomin.musicist.controllers;
 
+import com.github.aistomin.musicist.model.Fretboard;
 import com.github.aistomin.musicist.model.Note;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,6 +25,7 @@ public final class HomeController {
     public String printWelcome(final ModelMap model) {
         model.addAttribute("message", "MusicIST");
         model.addAttribute("notes", Note.values());
+        model.addAttribute("fretboard", new Fretboard());
         return "index";
     }
 }

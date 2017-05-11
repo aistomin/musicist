@@ -105,8 +105,21 @@
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>ABC</p>
+            <h2>Fretboard test</h2>
+            <p>
+            <table title="Fretboard" border="1">
+                <thead>Fretboard</thead>
+                <tbody>
+                <c:forEach items="${fretboard.getFrets()}" var="string">
+                    <tr>
+                        <c:forEach items="${string}" var="item">
+                            <td><spring:message code="${item.getI18nKey()}"/></td>
+                        </c:forEach>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+            </p>
             <p>
                 <a class="btn btn-default" href="#" role="button">View details</a>
             </p>
