@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Created by aistomin on 11.05.17.
- *
+ * <p>
  * Fretboard representation.
  */
 public final class Fretboard {
@@ -118,6 +118,7 @@ public final class Fretboard {
      * The matrix which represents the frets + strings. Rows are strings and
      * columns are frets. Value of the column #0 is the open string sound. The
      * other columns are corresponding string/fret sound.
+     *
      * @return Matrix.
      */
     public List<List<Note>> getFrets() {
