@@ -108,7 +108,7 @@
             <h2>Fretboard test</h2>
             <p>
             <table title="Fretboard" border="1">
-                <thead>Fretboard</thead>
+                <thead><spring:message code="fretboard"/></thead>
                 <tbody>
                 <c:forEach items="${fretboard.getFrets()}" var="string">
                     <tr>
