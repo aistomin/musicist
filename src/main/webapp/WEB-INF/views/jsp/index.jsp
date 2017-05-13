@@ -105,7 +105,7 @@
             </p>
         </div>
         <div class="col-md-4">
-            <h2>Fretboard test</h2>
+            <h2><spring:message code="test.fretboard"/></h2>
             <p>
             <table title="Fretboard" border="1">
                 <thead><spring:message code="fretboard"/></thead>
