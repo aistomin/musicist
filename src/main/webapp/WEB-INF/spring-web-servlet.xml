@@ -1,16 +1,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <context:component-scan base-package="com.github.aistomin.musicist" />
+    <context:component-scan base-package="com.github.aistomin.musicist"/>
 
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -22,27 +22,67 @@
         </property>
     </bean>
 
-    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
 
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
 
-    <!-- Resolves views selected for rendering by @Controllers to .jsp resources 
-		in the /WEB-INF/views directory -->
+    <!-- Use in-memory embedded H2 database -->
+    <jdbc:embedded-database id="dataSource" type="H2">
+    </jdbc:embedded-database>
+
+    <!-- Run H2 web server within application that will access the same in-memory database -->
+    <bean id="h2Server" class="org.h2.tools.Server" factory-method="createTcpServer" init-method="start"
+          destroy-method="stop" depends-on="h2WebServer">
+        <constructor-arg value="-tcp,-tcpAllowOthers,-tcpPort,9092"/>
+    </bean>
+    <bean id="h2WebServer" class="org.h2.tools.Server" factory-method="createWebServer" init-method="start"
+          destroy-method="stop">
+        <constructor-arg value="-web,-webAllowOthers,-webPort,8082"/>
+    </bean>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="UsersPU"/>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan">
+            <list>
+                <value>com.github.aistomin.musicist.model.entites</value>
+            </list>
+        </property>
+        <property name="persistenceProvider">
+            <bean class="org.hibernate.jpa.HibernatePersistenceProvider"/>
+        </property>
+        <property name="jpaProperties">
+            <map>
+                <entry key="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+                <entry key="hibernate.hbm2ddl.auto" value="create"/>
+                <!--<entry key="hibernate.hbm2ddl.import_files" value="import_data.sql"/>-->
+                <entry key="hibernate.show_sql" value="true"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="transactionManager"
+          class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/views/" />
-        <property name="suffix" value=".jsp" />
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
     <bean id="messageSource"
-                class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="classpath:messages" />
-        <property name="defaultEncoding" value="UTF-8" />
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:messages"/>
+        <property name="defaultEncoding" value="UTF-8"/>
     </bean>
 
     <bean id="localeResolver"
-                class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
-        <property name="defaultLocale" value="en" />
+          class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="en"/>
         <property name="cookieName" value="myAppLocaleCookie"></property>
         <property name="cookieMaxAge" value="3600"></property>
     </bean>
@@ -50,10 +90,10 @@
     <mvc:interceptors>
         <bean
                 class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-            <property name="paramName" value="locale" />
+            <property name="paramName" value="locale"/>
         </bean>
     </mvc:interceptors>
 
-    <context:component-scan base-package="com.github.aistomin" />
+    <context:component-scan base-package="com.github.aistomin"/>
 
 </beans>
