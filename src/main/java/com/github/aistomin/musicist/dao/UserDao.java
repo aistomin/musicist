@@ -11,12 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
  * User data access object.
  */
 @Component
+@Transactional
 public class UserDao {
 
     /**
      * Hibernate entity manager.
      */
-    @PersistenceContext
+    @PersistenceContext(unitName = "entityManagerFactory")
     private EntityManager manager;
 
     /**
@@ -35,7 +36,6 @@ public class UserDao {
      *
      * @param id User's ID.
      */
-    @Transactional
     public final void delete(final int id) {
         manager.remove(manager.getReference(User.class, id));
     }
@@ -45,7 +45,6 @@ public class UserDao {
      *
      * @param user User.
      */
-    @Transactional
     public final void save(final User user) {
         manager.persist(user);
     }
