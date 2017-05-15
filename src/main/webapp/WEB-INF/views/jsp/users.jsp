@@ -13,7 +13,7 @@
                 <c:out value="${user.username}"/>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/users/delete/${user.id}">Add new user</a>
+                <a href="${pageContext.request.contextPath}/users/delete/${user.id}">Delete user</a>
             </td>
         </tr>
     </c:forEach>
