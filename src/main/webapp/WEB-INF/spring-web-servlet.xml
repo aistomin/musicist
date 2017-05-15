@@ -80,8 +80,8 @@
     <bean id="localeResolver"
           class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
         <property name="defaultLocale" value="en"/>
-        <property name="cookieName" value="myAppLocaleCookie"></property>
-        <property name="cookieMaxAge" value="3600"></property>
+        <property name="cookieName" value="myAppLocaleCookie"/>
+        <property name="cookieMaxAge" value="3600"/>
     </bean>
 
     <mvc:interceptors>
