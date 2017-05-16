@@ -8,10 +8,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
+ * Created by aistomin on 14.05.17.
+ * <p>
  * User data access object.
  */
 @Component
-@Transactional
 public class UserDao {
 
     /**
@@ -36,6 +37,7 @@ public class UserDao {
      *
      * @param id User's ID.
      */
+    @Transactional
     public final void delete(final int id) {
         manager.remove(manager.getReference(User.class, id));
     }
@@ -45,6 +47,7 @@ public class UserDao {
      *
      * @param user User.
      */
+    @Transactional
     public final void save(final User user) {
         manager.persist(user);
     }

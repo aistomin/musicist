@@ -12,7 +12,7 @@
 
     <mvc:annotation-driven/>
 
-    <context:component-scan base-package="com.github.aistomin.musicist.*"/>
+    <context:component-scan base-package="com.github.aistomin.musicist"/>
 
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -89,6 +89,4 @@
             <property name="paramName" value="locale"/>
         </bean>
     </mvc:interceptors>
-
-    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 </beans>

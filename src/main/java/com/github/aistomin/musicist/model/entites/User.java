@@ -9,6 +9,8 @@ import javax.persistence.Table;
 import javax.persistence.Version;
 
 /**
+ * Created by aistomin on 14.05.17.
+ * <p>
  * User entity.
  */
 @Entity
@@ -48,6 +50,7 @@ public final class User implements Serializable {
 
     /**
      * Ctor.
+     *
      * @param name Username.
      */
     public User(final String name) {
@@ -57,6 +60,7 @@ public final class User implements Serializable {
 
     /**
      * Get user's ID.
+     *
      * @return User's ID.
      */
     public int getId() {
@@ -65,6 +69,7 @@ public final class User implements Serializable {
 
     /**
      * Set user's ID.
+     *
      * @param identifier User's ID.
      */
     public void setId(final int identifier) {
@@ -73,6 +78,7 @@ public final class User implements Serializable {
 
     /**
      * Get username.
+     *
      * @return Username.
      */
     public String getUsername() {
@@ -81,6 +87,7 @@ public final class User implements Serializable {
 
     /**
      * Set username.
+     *
      * @param name Username.
      */
     public void setUsername(final String name) {
@@ -89,6 +96,7 @@ public final class User implements Serializable {
 
     /**
      * Get record's version.
+     *
      * @return Version.
      */
     public long getVersion() {
@@ -97,6 +105,7 @@ public final class User implements Serializable {
 
     /**
      * Set record's version.
+     *
      * @param ver Record's version.
      */
     public void setVersion(final long ver) {
