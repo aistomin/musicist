@@ -1,10 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <title>Database test.</title>
+    <title><spring:message key="users.management"/></title>
 </head>
 <body>
-<h1>User management</h1>
+<h1><spring:message key="users.management"/></h1>
 
 <table>
     <c:forEach var="user" items="${users}">
