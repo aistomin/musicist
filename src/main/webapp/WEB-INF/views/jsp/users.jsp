@@ -23,6 +23,6 @@
     </c:if>
 </table>
 
-<a href="${pageContext.request.contextPath}/users/add">Add new user</a>
+<a href="${pageContext.request.contextPath}/users/add"><spring:message key="users.add"/></a>
 </body>
 </html>
