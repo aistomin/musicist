@@ -14,7 +14,7 @@
                 <c:out value="${user.username}"/>
             </td>
             <td>
-                <a href="${pageContext.request.contextPath}/users/delete/${user.id}">Delete user</a>
+                <a href="${pageContext.request.contextPath}/users/delete/${user.id}"><spring:message key="users.delete"/></a>
             </td>
         </tr>
     </c:forEach>
