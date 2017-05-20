@@ -19,7 +19,7 @@
         </tr>
     </c:forEach>
     <c:if test="${empty users}">
-        no users added yet.
+        <spring:message key="users.no.users"/>
     </c:if>
 </table>
 
