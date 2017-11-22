@@ -1,6 +1,6 @@
 # musicist
 [![Build Status](https://travis-ci.org/aistomin/musicist.svg?branch=master)](https://travis-ci.org/aistomin/musicist)
-[![Dependencies](https://www.versioneye.com/user/projects/5a12145b0fb24f2a31717106/badge.svg?style=flat)](https://www.versioneye.com/user/projects/58ff3507c2ef4238225808ea)
+[![Dependencies](https://www.versioneye.com/user/projects/5a12145b0fb24f2a31717106/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5a12145b0fb24f2a31717106)
 
 The testing software for learning musical notes.
 
