@@ -4,7 +4,7 @@
 The testing software for learning musical notes.
 
 ## System requirements
-1. Oracle Java >= 8
+1. Oracle Java >= 15
 2. Maven >= 3.3.9
 
 ## How to Run?
