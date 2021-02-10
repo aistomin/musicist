@@ -4,7 +4,6 @@ merge:
   commanders:
     - aistomin
   script: |-
-    update-java-alternatives -s java-15-openjdk-amd64
     java -version
     mvn -version
     mvn clean install package
