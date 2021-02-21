@@ -1,5 +1,6 @@
 # musicist
 [![Build Status](https://travis-ci.org/aistomin/musicist.svg?branch=master)](https://travis-ci.org/aistomin/musicist)
+[![codecov](https://codecov.io/gh/aistomin/musicist/branch/master/graph/badge.svg)](https://codecov.io/gh/aistomin/musicist)
 [![Hits-of-Code](https://hitsofcode.com/github/aistomin/musicist)](https://hitsofcode.com/github/aistomin/musicist/view)
 
 The testing software for learning musical notes.
