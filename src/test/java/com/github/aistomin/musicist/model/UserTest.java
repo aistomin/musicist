@@ -4,8 +4,8 @@ import com.github.aistomin.musicist.MusicistSuite;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created by aistomin on 01.05.17.
@@ -31,11 +31,11 @@ public final class UserTest extends MusicistSuite {
         user.setFacebookId(fbid);
         final String email = randomEmail();
         user.setEmail(email);
-        Assert.assertEquals(id, user.getId());
-        Assert.assertEquals(1, user.getRoles().size());
-        Assert.assertTrue(user.getRoles().containsAll(roles));
-        Assert.assertEquals(fbid, user.getFacebookId());
-        Assert.assertEquals(email, user.getEmail());
+        Assertions.assertEquals(id, user.getId());
+        Assertions.assertEquals(1, user.getRoles().size());
+        Assertions.assertTrue(user.getRoles().containsAll(roles));
+        Assertions.assertEquals(fbid, user.getFacebookId());
+        Assertions.assertEquals(email, user.getEmail());
     }
 
     /**
@@ -55,10 +55,10 @@ public final class UserTest extends MusicistSuite {
         user.setGoogleId(gid);
         final String email = randomEmail();
         user.setEmail(email);
-        Assert.assertEquals(id, user.getId());
-        Assert.assertEquals(1, user.getRoles().size());
-        Assert.assertTrue(user.getRoles().containsAll(roles));
-        Assert.assertEquals(gid, user.getGoogleId());
-        Assert.assertEquals(email, user.getEmail());
+        Assertions.assertEquals(id, user.getId());
+        Assertions.assertEquals(1, user.getRoles().size());
+        Assertions.assertTrue(user.getRoles().containsAll(roles));
+        Assertions.assertEquals(gid, user.getGoogleId());
+        Assertions.assertEquals(email, user.getEmail());
     }
 }

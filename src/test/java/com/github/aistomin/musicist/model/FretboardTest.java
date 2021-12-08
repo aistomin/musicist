@@ -1,8 +1,8 @@
 package com.github.aistomin.musicist.model;
 
 import java.util.List;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created by aistomin on 11.05.17.
@@ -24,7 +24,7 @@ public final class FretboardTest {
     @Test
     public void testFretboard() throws Exception {
         for (final List<Note> string : new Fretboard().getFrets()) {
-            Assert.assertEquals(1 + FRETS, string.size());
+            Assertions.assertEquals(1 + FRETS, string.size());
         }
     }
 
@@ -36,7 +36,7 @@ public final class FretboardTest {
     @Test
     public void testNotes() throws Exception {
         for (final List<Note> string : new Fretboard().getFrets()) {
-            Assert.assertEquals(string.get(0), string.get(FRETS));
+            Assertions.assertEquals(string.get(0), string.get(FRETS));
         }
     }
 }
