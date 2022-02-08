@@ -121,7 +121,7 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.4.8.v20171121</version>
+                <version>11.0.7</version>
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webApp>
@@ -169,7 +169,7 @@
             <plugin>
                 <groupId>com.github.aistomin</groupId>
                 <artifactId>maven-dependencies-analyser</artifactId>
-                <version>0.2</version>
+                <version>1.0</version>
                 <configuration>
                     <level>WARNING</level>
                 </configuration>
