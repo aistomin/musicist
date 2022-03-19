@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <jdk.version>15</jdk.version>
-        <spring.version>5.3.16</spring.version>
+        <spring.version>5.3.17</spring.version>
         <jstl.version>1.2</jstl.version>
         <slf4j.version>2.0.0-alpha6</slf4j.version>
         <hibernate.version>6.0.0.CR2</hibernate.version>
