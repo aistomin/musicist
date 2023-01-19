@@ -14,7 +14,7 @@
         <jstl.version>1.2</jstl.version>
         <slf4j.version>2.0.6</slf4j.version>
         <hibernate.version>6.2.0.CR1</hibernate.version>
-        <junitVersion>5.9.1</junitVersion>
+        <junitVersion>5.9.2</junitVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
