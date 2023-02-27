@@ -189,7 +189,7 @@
             </plugin>
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
-                <artifactId></artifactId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>4.7.3.2</version>
                 <dependencies>
                     <dependency>
